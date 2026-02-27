@@ -77,7 +77,7 @@ const Home = () => {
       <Hero movie={heroMovie} />
 
       {/* Movie Rows - All sections with consistent closer spacing */}
-      <div className="relative -mt-20 z-10 space-y-4">
+      <div className="relative -mt-16 z-10 space-y-2">
         <MovieRow title="Trending Now" movies={trending} />
         <MovieRow title="Top Rated" movies={topRated} />
         <MovieRow title="Popular" movies={popular} />

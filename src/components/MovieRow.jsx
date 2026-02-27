@@ -30,9 +30,9 @@ const MovieRow = ({ title, movies }) => {
   if (!movies || movies.length === 0) return null;
 
   return (
-    <div className="relative group mb-4 animate-fade-in">
+    <div className="relative group mb-2 animate-fade-in">
       {/* Title */}
-      <h2 className="text-xl md:text-2xl font-bold mb-4 px-4 sm:px-6 lg:px-8">
+      <h2 className="text-xl md:text-2xl font-bold mb-3 px-4 sm:px-6 lg:px-8">
         {title}
       </h2>
 

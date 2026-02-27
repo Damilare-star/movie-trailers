@@ -9,7 +9,7 @@
 }
 
 body {
-  @apply bg-netflix-black text-white;
+ @apply bg-[#141414] text-white;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }

@@ -23,8 +23,8 @@ const GenreFilter = () => {
   };
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 mb-4 animate-fade-in">
-      <h2 className="text-xl md:text-2xl font-bold mb-4">Browse by Genre</h2>
+    <div className="px-4 sm:px-6 lg:px-8 mb-2 animate-fade-in">
+      <h2 className="text-xl md:text-2xl font-bold mb-3">Browse by Genre</h2>
       <div className="flex flex-wrap gap-3">
         {genres.map((genre) => (
           <button
