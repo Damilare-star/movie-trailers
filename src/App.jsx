@@ -12,6 +12,7 @@ const Genre = lazy(() => import('./pages/Genre'));
 const Search = lazy(() => import('./pages/Search'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 const MyList = lazy(() => import('./pages/MyList'));
+const ActorProfile = lazy(() => import('./pages/ActorProfile'));
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/genre/:id" element={<Genre />} />
             <Route path="/search" element={<Search />} />
             <Route path="/my-list" element={<MyList />} />
+            <Route path="/actor/:id" element={<ActorProfile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

@@ -91,4 +91,14 @@ export const fetchMovieVideos = async (movieId) => {
   return response.data.results;
 };
 
+// Person/Actor endpoints
+export const fetchPersonDetails = async (personId) => {
+  const response = await api.get(`/person/${personId}`, {
+    params: {
+      append_to_response: 'movie_credits,external_ids',
+    },
+  });
+  return response.data;
+};
+
 export default api;

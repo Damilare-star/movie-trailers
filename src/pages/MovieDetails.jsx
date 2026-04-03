@@ -4,7 +4,6 @@ import { FaPlay, FaStar, FaClock, FaCalendar, FaPlus, FaCheck, FaArrowLeft } fro
 import { fetchMovieDetails, getBackdropUrl, getPosterUrl } from '../services/api';
 import { useMovieContext } from '../context/MovieContext';
 import TrailerModal from '../components/TrailerModal';
-import MovieRow from '../components/MovieRow';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -168,17 +167,31 @@ const MovieDetails = () => {
           <h2 className="text-2xl font-bold mb-6">Cast</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {movie.credits.cast.slice(0, 12).map((person) => (
-              <div key={person.id} className="text-center">
-                <img
-                  src={
-                    person.profile_path
-                      ? getPosterUrl(person.profile_path)
-                      : 'https://via.placeholder.com/200x300?text=No+Image'
-                  }
-                  alt={person.name}
-                  className="w-full aspect-[2/3] object-cover rounded-lg mb-2"
-                />
-                <p className="text-white font-semibold text-sm">{person.name}</p>
+              <div
+                key={person.id}
+                onClick={() => navigate(`/actor/${person.id}`)}
+                className="text-center cursor-pointer group"
+              >
+                <div className="relative overflow-hidden rounded-lg mb-2">
+                  <img
+                    src={
+                      person.profile_path
+                        ? getPosterUrl(person.profile_path)
+                        : 'https://via.placeholder.com/200x300?text=No+Image'
+                    }
+                    alt={person.name}
+                    className="w-full aspect-[2/3] object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-netflix-red/0 group-hover:bg-netflix-red/20 transition-all duration-300 flex items-end justify-center pb-2 opacity-0 group-hover:opacity-100">
+                    <span className="text-white text-xs font-semibold bg-black/60 px-2 py-1 rounded">
+                      View Profile
+                    </span>
+                  </div>
+                </div>
+                <p className="text-white font-semibold text-sm group-hover:text-netflix-red transition-colors">
+                  {person.name}
+                </p>
                 <p className="text-gray-400 text-xs">{person.character}</p>
               </div>
             ))}
