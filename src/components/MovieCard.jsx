@@ -26,7 +26,7 @@ const MovieCard = ({ movie }) => {
 
   return (
     <div
-      className="relative group cursor-pointer flex-shrink-0 w-[150px] sm:w-[200px] md:w-[240px] transition-all duration-300"
+      className="relative group cursor-pointer w-full transition-all duration-300"
       onClick={handleClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

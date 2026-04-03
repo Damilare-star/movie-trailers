@@ -78,9 +78,17 @@ const Genre = () => {
 
       {/* Movies Grid */}
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-8">
           {movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+            <div key={movie.id} className="flex flex-col">
+              <MovieCard movie={movie} />
+              <div className="mt-2 px-1">
+                <p className="text-white text-sm font-medium leading-snug line-clamp-2">{movie.title}</p>
+                {movie.release_date && (
+                  <p className="text-gray-400 text-xs mt-0.5">{new Date(movie.release_date).getFullYear()}</p>
+                )}
+              </div>
+            </div>
           ))}
           
           {loading &&

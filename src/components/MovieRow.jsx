@@ -71,7 +71,9 @@ const MovieRow = ({ title, movies }) => {
           }}
         >
           {movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+            <div key={movie.id} className="flex-shrink-0 w-[150px] sm:w-[180px] md:w-[200px]">
+              <MovieCard movie={movie} />
+            </div>
           ))}
         </div>
       </div>
